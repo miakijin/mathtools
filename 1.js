@@ -1,7 +1,7 @@
 function getnumber() {
     let inputnumbers = document.getElementById("inputnah");
     if (!inputnumbers) {
-        return 数値を入れてください;
+        return [];
     };
     var numbers = inputnumbers.value.split(',');
     return numbers;
@@ -13,7 +13,7 @@ function updatenum() {
     var variance = getvariance(numbers,average);
     var mathSD = Math.sqrt(variance)
     let numbox = document.getElementById("inputednum");
-    numbox.removeChild(childnode);
+    numbox.innerHTML = '';
     for (let i = 0;i<numbers.length;i++) {
         let numli = document.createElement("li");
         numli.textContent = numbers[i];
